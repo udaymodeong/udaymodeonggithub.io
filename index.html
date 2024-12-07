@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoTravel!.com</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for Search Bar */
+        .search-container {
+            display: flex;                /* Use flexbox for alignment */
+            justify-content: center;      /* Center the search bar horizontally */
+            margin: 20px 0;              /* Add margin above and below the search bar */
+        }
+
+        .search-input {
+            width: 300px;                /* Width of the search input */
+            padding: 10px;               /* Padding inside the input */
+            border: 1px solid #ccc;      /* Border color */
+            border-radius: 5px;          /* Rounded corners */
+            font-size: 16px;             /* Font size */
+        }
+
+        .search-button {
+            padding: 10px 15px;          /* Padding for the button */
+            margin-left: 10px;           /* Space between input and button */
+            border: none;                /* Remove default border */
+            background-color: #25D366;   /* Button background color */
+            color: white;                /* Text color */
+            border-radius: 5px;          /* Rounded corners */
+            font-size: 16px;             /* Font size */
+            cursor: pointer;             /* Change cursor to pointer */
+            transition: background-color 0.3s; /* Smooth background color change */
+        }
+
+        .search-button:hover {
+            background-color: #1DAF54;   /* Darken button on hover */
+        }
+
+        header {
+            text-align: center;          /* Center the header text */
+            margin-bottom: 20px;         /* Margin below the header */
+        }
+
+        .catalogue {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 30%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h2 {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .more-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .more-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Rating Stars */
+        .rating {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .rating span {
+            font-size: 20px;
+            cursor: pointer;
+            color: gray;
+            transition: color 0.3s ease;
+        }
+
+        .rating span:hover,
+        .rating span:hover ~ span {
+            color: gold;
+        }
+
+        .rating span.active,
+        .rating span.active ~ span {
+            color: gold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Product details page styling */
+        .product-details {
+            text-align: center;
+            margin: 100px;
+        }
+
+        .product-details img {
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+/* Why Us Section */
+.why-us {
+    background-image: url('images/wallpapermain.jpg'); /* Replace with your image path */
+    background-size: cover;                         /* Ensure the image covers the section */
+    background-position: center;   
+    background-color: beige;                 /* Center the image */
+    padding: 40px 20px;                            /* Padding for the section */
+    text-align: center;                            /* Center the text */
+    border-radius: 10px;                          /* Rounded corners */
+    margin: 20px 0;                               /* Margin around the section */
+    color: khaki;                                  /* Change text color for visibility */
+    position: relative;                            /* For any absolute positioning if needed */
+}
+
+
+        /* WhatsApp Button Styles */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;                /* Position from the bottom */
+            right: 20px;                 /* Position from the right */
+            background-color: #25D366;   /* Button background color */
+            border-radius: 50%;          /* Rounded button */
+            padding: 10px;               /* Padding for button */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for button */
+            transition: transform 0.3s;  /* Smooth transform */
+            z-index: 1000;               /* High z-index to stay above other elements */
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);       /* Scale up on hover */
+        }
+
+        .whatsapp-icon {
+            width: 50px;                 /* Width of the WhatsApp icon */
+            height: 50px;                /* Height of the WhatsApp icon */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="font-size: 90px;">GoTravel!</h1>
+        <p style="font-size: 40px;">Find your best place for holiday</p>
+    </header>
+
+    <!-- Search Bar Above Country Selections -->
+    <div class="search-container">
+        <input type="text" placeholder="Search..." id="searchInput" class="search-input" required>
+        <button type="button" class="search-button" onclick="redirectToProduct()">Search</button>
+    </div>
+
+     <!-- Why Us Section -->
+     <section class="why-us">
+        <h2>Why Choose Us?</h2>
+        <p>We are dedicated to providing the best travel experience for you.</p>
+        <div class="reason">🌍 **Expert Guidance**: Our team of travel experts is available 24/7 to assist you with your travel needs.</div>
+        <div class="reason">✈️ **Tailored Packages**: We offer customized travel packages to fit your preferences and budget.</div>
+        <div class="reason">💬 **Customer Support**: Our customer service is always ready to help you with any queries or concerns.</div>
+        <div class="reason">🛡️ **Safe and Secure**: We prioritize your safety and security throughout your journey.</div>
+        <div class="reason">🌟 **Competitive Pricing**: We provide the best deals without compromising on quality.</div>
+    
+        <section class="catalogue" id="catalogue">
+          <div class="product" data-country="Japan">
+              <img src="images/Japan.jpeg" alt="Japan">
+              <h2>Japan</h2>
+              <p>All about Japan</p>
+              <div class="rating">
+                  <span data-value="5">☆</span>
+                  <span data-value="4">☆</span>
+                  <span data-value="3">☆</span>
+                  <span data-value="2">☆</span>
+                  <span data-value="1">☆</span>
+              </div>
+              <button class="book-btn" data-product="japan">Book</button>
+              <a href="product1.html" class="more-btn">More</a>
+          </div>
+  
+          <div class="product" data-country="Korea">
+              <img src="images/Korea.jpeg" alt="Korea">
+              <h2>South Korea</h2>
+              <p>All about South Korea</p>
+              <div class="rating">
+                  <span data-value="5">☆</span>
+                  <span data-value="4">☆</span>
+                  <span data-value="3">☆</span>
+                  <span data-value="2">☆</span>
+                  <span data-value="1">☆</span>
+              </div>
+              <button class="book-btn" data-product="korea">Book</button>
+              <a href="product2.html" class="more-btn">More</a>
+          </div>
+  
+          <div class="product" data-country="Russia">
+              <img src="images/Russia.jpeg" alt="Russia">
+              <h2>Russia</h2>
+              <p>All about Russia</p>
+              <div class="rating">
+                  <span data-value="5">☆</span>
+                  <span data-value="4">☆</span>
+                  <span data-value="3">☆</span>
+                  <span data-value="2">☆</span>
+                  <span data-value="1">☆</span>
+              </div>
+              <button class="book-btn" data-product="russia">Book</button>
+              <a href="product3.html" class="more-btn">More</a>
+          </div>
+      </section>
+  
+      <script>
+          function redirectToProduct() {
+              const query = document.getElementById("searchInput").value.toLowerCase();
+              const productPages = {
+                  japan: "product1.html",
+                  korea: "product2.html",
+                  russia: "product3.html"
+              };
+              if (productPages[query]) {
+                  window.location.href = productPages[query];
+              } else {
+                  alert("Product not found!");
+              }
+          }
+        </script>
+</body>
+     <!-- Discount Offer Modal -->
+     <div id="discountModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn discount-close" style="color: red;">&times;</span>
+            <h2>Special Discount Offer!</h2>
+            <p>Get 20% off on all products for a limited time. Use code: SAVE20 at checkout :)</p>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn product-close" style="color: red;">&times;</span>
+            <h2 id="modalTitle">Product Details</h2>
+            <img id="modalImage" src="" alt="Product Image" style="width: 100%; cursor: pointer;">
+            <p id="modalDescription">Product description here...</p>
+
+            <!-- Section for displaying destinations inside the Product Details Modal -->
+        <div id="destinationList" class="destination-list" style="display: block;">
+            <h3>Choose Your Trip</h3>
+            ></div>
+</div>
+
+    </div>
+    <!-- Destination Detail Modal -->
+    <div id="destinationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn destination-close" style="color: red;">&times;</span>
+            <h2 id="destinationTitle">Destination Name</h2>
+            <img id="destinationImage" src="" alt="Destination Image" style="width: 100%;">
+            <p id="destinationDescription">Description about the destination...</p>
+            <button id="bookDestinationBtn">Book this Destination</button>
+        </div>
+    </div>
+
+    <!-- Cart Icon in the top right corner -->
+    <div id="cartIcon" style="position: fixed; top: 20px; right: 20px; cursor: pointer;">
+        <img src="images/Cart.png" alt="Cart" style="width: 40px; height: 40px;">
+        <span id="cartCount" style="
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: #09f7cf;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 12px;
+            display: none;">0</span>
+    </div>
+
+    <!-- Cart Details Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn cart-close" style="color: red;">&times;</span>
+            <h3>Your Booked Destinations</h3>
+            <div id="cartDetails"></div>
+            <button id="payButton" style="margin-top: 20px; display: none;">Pay</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn payment-close" style="color: red;">&times;</span>
+            <h3>Payment Information</h3>
+            <p>Please transfer the total amount to the following account number:</p>
+            <p><strong>Bank Account Number:</strong> 1234567890</p>
+            <p>Or scan the QR code below to pay via QRIS:</p>
+            <img src="images/qr.jpg" alt="QR Code for Payment" style="width: 200px; height: 200px;">
+            <p>Send your payment receipt to <b>gotravel@email.com</b></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%20I%20am%20interested%20in%20your%20services" target="_blank" class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="whatsapp-icon">
+    </a>
+
+    <script>
+        function redirectToProduct() {
+            // Get the search input value and convert it to lowercase
+            const query = document.getElementById("searchInput").value.toLowerCase();
+
+            // Define mapping from country names to product pages
+            const productPages = {
+                japan: "product1.html",
+                korea: "product2.html",
+                russia: "product3.html" // Ensure the spelling is correct here
+            };
+
+            // Redirect based on the query
+            if (productPages[query]) {
+                window.location.href = productPages[query]; // Redirect to the product page
+            } else {
+                alert("Product not found!"); // Alert if product doesn't exist
+            }
+        }
+    </script>
+    
+    <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%20I%20am%20interested%20in%20your%20services" target="_blank" class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="whatsapp-icon">
+    </a>
+
+    <div style="width: 80%; margin: 0 auto; padding-top: 20px;">
+        <canvas id="ratingChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </body>
+    
+</html>
