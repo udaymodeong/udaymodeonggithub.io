@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 1 Details</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style type="text/css">
+        body {
+            background-image: url('images/background1.jpg'); /* Replace with your image path */
+            background-size: cover;         /* Cover the entire viewport */
+            background-position: center;     /* Center the image */
+            background-repeat: no-repeat;    /* Prevent the image from repeating */
+            color: white;                   /* Set text color to white for better contrast */
+            font-family: Arial, sans-serif; /* Use a simple font */
+        }
+
+        .product-details {
+            font-size: 18px; /* Adjust to your desired size */
+            line-height: 1.6; /* Makes the text more readable */
+            text-align: justify;
+            max-width: 800px; /* Maximum width for content */
+            margin: 20px auto; /* Center the content with margin */
+            padding: 20px; /* Padding inside content */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for readability */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Remove any size differences for specific headings */
+        .product-details h2, 
+        .product-details h3, 
+        .product-details h4, 
+        .product-details h5, 
+        .product-details h6 {
+            font-size: inherit;
+            margin: 10px 0;
+        }
+
+        .img_deg {
+            float: right;
+            width: 50%;
+            margin-left: 20px;
+        }
+
+        .pos_cen{
+            width: 90%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            color: white; /* Ensure the button text is readable */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px; /* Add some padding to the button */
+            background-color: rgba(0, 0, 0, 0.7); /* Button background */
+            border-radius: 5px; /* Rounded corners for button */
+        }
+        
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Change background on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Japan</h1>
+    </header>
+
+    <section class="product-details">
+        <img src="images/Japan Country.jpeg" alt="Japan">
+        <h2>
+            Japan is a country where ancient traditions meet cutting-edge innovation, offering tourists a unique and captivating experience. 
+            In bustling cities like Tokyo, visitors can explore futuristic districts filled with towering skyscrapers, high-tech gadgets, and neon lights, 
+            while just a short distance away, tranquil temples and serene gardens offer moments of reflection and peace. Kyoto, often regarded as the cultural heart of Japan, 
+            invites travelers to step back in time with its beautiful temples, traditional tea houses, and the iconic Arashiyama Bamboo Grove. 
+        </h2>
+        <div class="pos_cen">
+            <img class="img_deg" src="images/mt.fuji.jpg" alt="Mount Fuji">
+            <h4>Mount Fuji, or Fujisan as the Japanese call it, is located on Japan’s largest island of Honshu. It has an elevation of 3,776m / 12,389ft and is Japan’s tallest peak. 
+                It is a dormant volcano with the last eruption taking place in 1707.​Mt.
+            </h4>     
+        </div>
+    
+        <div class="pos_cen">
+            <img class="img_deg" src="images/TokyoTower.jpeg" alt="Tokyo Tower">
+            <h5>Standing 333 meters high in central Tokyo, Tokyo Tower (東京タワー) is the world's tallest, self-supported steel tower and is 3 meters taller than its model, the Eiffel Tower. 
+                A symbol of Japan's post-war rebirth as a major economic power when it was surpassed by the Tokyo Skytree. 
+            </h5>
+        </div>
+
+        <div class="pos_cen">
+            <img class="img_deg" src="images/kyototemple.jpg" alt="Kyoto Temple">
+            <h6>Kyoto is known for its numerous temples and shrines and is the type of city where you can come across beautiful temples and shrines while simply walking around. 
+                One of the most popular, Kiyomizu-dera, was one of my favorites.
+            </h6>
+        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fXJ8EB1WoF4?si=VpAWnqznbaXqnpsu" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/i3ibnuGI7h8?si=O8X4D7mKi3NyH7VQ" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yK4aAYHKAjg?si=fgHlq42XU1PgXCGr" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+        <a href="index.html" class="back-btn">Back to Catalogue</a>
+    </section>
+</body>
+</html>
